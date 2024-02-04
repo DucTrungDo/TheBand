@@ -318,6 +318,7 @@ html {
     width: 900px;
     max-width: calc(100% - 32px);
     min-height: 200px;
+    animation: modalFadeIn ease 0.5s;
 }
 
 header.modal-header {
@@ -409,8 +410,15 @@ header.modal-header {
     cursor: pointer;
 }
 
-@keyframes modalFadeIin {
-    
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
     
 

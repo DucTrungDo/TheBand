@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-
 </head>
 
 <body>
@@ -46,16 +45,32 @@
             </div>
         </div>
 
-        <div id="slider">
+        <!-- Slider -->
+        <div class="slider">
+            <img class="slide-image" src="./assets/img/slider/slider1.jpg" alt="Chicago">
             <div class="text-content">
-                <h2 class="text-heading">
-                    Chicago
-                </h2>
-                <div class="text-description">
-                    Thank you, Chicago - A night we won't forget.
-                </div>
+                <h3 class="text-heading">Chicago</h3>
+                <div class="text-description">Thank you, Chicago - A night we won't forget.</div>
             </div>
         </div>
+
+        <div class="slider">
+            <img class="slide-image" src="./assets/img/slider/slider2.jpg" alt="Los Angeles">
+            <div class="text-content">
+                <h3 class="text-heading">Los Angeles</h3>
+                <div class="text-description">We had the best time playing at Venice Beach!</div>
+            </div>
+        </div>
+
+
+        <div class="slider">
+            <img class="slide-image" src="./assets/img/slider/slider3.jpg" alt="New York">
+            <div class="text-content">
+                <h3 class="text-heading">New York</h3>
+                <div class="text-description">The atmosphere in New York is lorem ipsum.</div>
+            </div>
+        </div>
+        <!-- End: Slider -->
 
         <div id="content">
             <!-- About section -->
@@ -192,7 +207,8 @@
                                         class="form-control">
                                 </div>
                             </div>
-                            <input class="contact-submit-btn btn pull-right mt-16 s-full-width" type="submit" value="SEND">
+                            <input class="contact-submit-btn btn pull-right mt-16 s-full-width" type="submit"
+                                value="SEND">
                         </form>
                     </div>
                 </div>
@@ -254,69 +270,9 @@
             </footer>
         </div>
     </div>
-
-
-    <!-- Modal script -->
-    <script>
-        const buyBtns = document.querySelectorAll('.place-buy-btn')
-        const modal = document.querySelector('.modal')
-        const modalContainer = document.querySelector('.modal-container')
-        const closeBuyBtns = document.querySelectorAll('.modal-close-header,.modal-close-footer')
-
-        const showBuyTickets = () => {
-            modal.classList.add('open')
-        }
-
-        const closeBuyTickets = () => {
-            modal.classList.remove('open')
-        }
-
-        for (buyBtn of buyBtns) {
-            buyBtn.addEventListener('click', showBuyTickets)
-        }
-
-        for (closeBtn of closeBuyBtns) {
-            closeBtn.addEventListener('click', closeBuyTickets)
-        }
-
-        modal.addEventListener('click', closeBuyTickets)
-
-        modalContainer.addEventListener('click', (event) => event.stopPropagation())
-
-    </script>
-
-    <script>
-        /* Open/close mobile menu */
-        var header = document.getElementById('header')
-        var mobileMenu = document.getElementById('mobile-menu')
-        var headerHeight = header.clientHeight
-
-        mobileMenu.onclick = () => {
-            var isClosed = header.clientHeight === headerHeight
-            if (isClosed) {
-                header.style.height = 'auto'
-            } else {
-                header.style.height = null
-            }
-        }
-
-        /* Auto close menu when clicking on a child element in menu (except 'More') */
-        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
-        for (var i = 0; i < menuItems.length; i++) {
-            var menuItem = menuItems[i]
-
-            menuItem.onclick = function () {
-                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
-                if (isParentMenu) {
-                    event.preventDefault()
-                } else {
-                    header.style.height = null
-                }
-            }
-        }
-    </script>
-
-
 </body>
+<script type="text/javascript" src="./assets/js/modal.js"></script>
+<script type="text/javascript" src="./assets/js/menu.js"></script>
+<script type="text/javascript" src="./assets/js/slider.js"></script>
 
 </html>

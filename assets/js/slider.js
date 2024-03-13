@@ -16,7 +16,7 @@ const slideShow = () => {
   if (previousIndex > slides.length - 1) {
     previousIndex = 0;
   }
-  setTimeout(slideShow, 1000);
+  setTimeout(slideShow, 3000);
 };
 
 slideShow();
